@@ -1,0 +1,1 @@
+# niigata-city-wifi-map
