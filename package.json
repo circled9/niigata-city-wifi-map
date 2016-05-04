@@ -1,0 +1,19 @@
+{
+  "name": "niigata-city-wifi-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/circled9/niigata-city-wifi-map.git"
+  },
+  "author": "Matsui Masashi <matsui@kaffeine.jp>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/circled9/niigata-city-wifi-map/issues"
+  },
+  "homepage": "https://github.com/circled9/niigata-city-wifi-map#readme"
+}
