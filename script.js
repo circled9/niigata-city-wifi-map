@@ -9,10 +9,8 @@
   function initializeMap() {
     var osmTileUrl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
     var osm = new L.TileLayer(osmTileUrl);
-    var google = new L.Google('TERRAIN');
     var layers = {
-      "OpenStreatMap": osm,
-      "GoogleMaps": google
+      "OpenStreatMap": osm
     };
 
     map = L.map("map").setView(defaultLocation, defaultZoom);
