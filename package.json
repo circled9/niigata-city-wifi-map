@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/circled9/niigata-city-wifi-map/issues"
   },
-  "homepage": "https://github.com/circled9/niigata-city-wifi-map#readme"
+  "homepage": "https://github.com/circled9/niigata-city-wifi-map#readme",
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "eslint-config-google": "^0.5.0"
+  }
 }
