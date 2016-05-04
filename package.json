@@ -4,8 +4,9 @@
   "description": "Niigata City Wi-Fi Map",
   "main": "index.js",
   "scripts": {
-    "prestart": "rimraf dist && mkdirp dist",
+    "prestart": "rimraf dist && mkdirp dist && npm run import",
     "start": "static dist",
+    "import": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
