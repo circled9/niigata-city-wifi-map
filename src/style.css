@@ -1,0 +1,23 @@
+html, body {
+  height: 100%;
+}
+
+#map-container {
+  height: 100%;
+  padding-top: 50px;
+}
+#map {
+  height: 100%;
+}
+
+.preicon {
+  margin-right: 0.5em;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  color: #999999;
+}
