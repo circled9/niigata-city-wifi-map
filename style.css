@@ -21,3 +21,11 @@ html, body {
 .description {
   color: #999999;
 }
+
+.attention {
+  z-index: 10002;
+  position: absolute;
+  bottom: 16px;
+  width: 90%;
+  margin: 0 5%;
+}
