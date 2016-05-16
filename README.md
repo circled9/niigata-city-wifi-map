@@ -47,4 +47,4 @@ See also https://opensource.org/licenses/isc-license.txt
 Niigata City Wi-Fi利用可能施設一覧、新潟市
 
 ![C-BY 2.1 JP](https://komtmt.files.wordpress.com/2015/04/by.png?w=150&h=52)  
-https://creativecommons.org/licenses/by-nc-nd/2.1/jp/
+http://creativecommons.org/licenses/by/2.1/jp/
