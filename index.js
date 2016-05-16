@@ -23,11 +23,17 @@ const formatter = text => {
     if (comment) {
       comment = comment.replace(/(\r\n|\n|\r)/gm, "");
     }
-    const isEmptyAddress = String(values[2] + values[3]).trim() === "";
+    const isEmptyAddress = address.trim() === "";
     if (isEmptyAddress) {
       callback("", null);
     } else {
-      const resolver = () => geocoder.geocode(address, (err, data) => {
+      // HACK 住所として扱えなそうなパターンを除外
+      const formattedAddress = address.split("　")[0]
+                                      .split("、")[0]
+                                      .replace(/付近$/g, "");
+      const resolver = () => geocoder.geocode(formattedAddress, (err, data) => {
+        console.log(data);
+        console.log(err);
         const point = {
           name: name,
           address: address,
