@@ -35,11 +35,15 @@ const formatter = text => {
       const resolver = () => geocoder.geocode(formattedAddress, (err, data) => {
         console.log(data);
         console.log(err);
+        let latlng;
+        if (data.status !== "ZERO_RESULTS") {
+          latlng = data.results[0].geometry.location
+        }
         const point = {
           name: name,
           address: address,
           comment: comment,
-          latlng: data.results[0].geometry.location
+          latlng
         };
         callback(err, point);
       });
