@@ -2,6 +2,7 @@ const request = require('request');
 const fs = require("fs");
 const async = require("async");
 const geocoder = require("geocoder");
+const Iconv = require('iconv').Iconv;
 
 const formatter = text => {
   const lines = text.split("\n");
@@ -67,8 +68,9 @@ const formatter = text => {
 };
 
 const url = "http://www.city.niigata.lg.jp/shisei/seisaku/it/open-data/opendata-kankou/od-citywifi.files/od-city_wifi_ichiran.csv";
-request(url, (error, response, body) => {
+request({url, encoding: null}, (error, response, body) => {
   if (!error && response.statusCode === 200) {
-    formatter(body);
+    const sjis = new Iconv('SHIFT_JIS', 'UTF-8');
+    formatter(sjis.convert(body).toString());
   }
 });
