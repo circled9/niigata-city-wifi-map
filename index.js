@@ -4,6 +4,21 @@ const async = require("async");
 const geocoder = require("geocoder");
 const Iconv = require('iconv').Iconv;
 
+const dictionary = {
+  "BRTバス停（新潟駅前）": {
+    lat: 37.913224,
+    lng: 139.061163
+  },
+  "BRTバス停（市役所前）": {
+    lat: 37.9165285,
+    lng: 139.2380758
+  },
+  "水の駅「ビュー福島潟」": {
+    lat: 37.9135636,
+    lng: 139.2380758
+  }
+};
+
 const formatter = text => {
   const lines = text.split("\n");
   lines.shift(); // ヘッダー行は不要なので削除
@@ -36,8 +51,13 @@ const formatter = text => {
         console.log(data);
         console.log(err);
         let latlng;
-        if (data.status !== "ZERO_RESULTS") {
+        const registeredAddressLatLng = dictionary[name];
+        if (registeredAddressLatLng) {
+          latlng = registeredAddressLatLng;
+        } else if (data.status !== "ZERO_RESULTS") {
           latlng = data.results[0].geometry.location
+        } else {
+          latlng = {lat: 0, lng: 0}; // とりあえずlatlngの墓場に
         }
         const point = {
           name: name,
