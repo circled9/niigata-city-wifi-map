@@ -59,7 +59,7 @@ const formatter = text => {
     }
     const validResults = results.filter(r => r !== null);
     const data = JSON.stringify(validResults);
-    fs.writeFile('dist/niigata-city-wifi-spot.json', data, err => {
+    fs.writeFile('docs/niigata-city-wifi-spot.json', data, err => {
       if (err) {
         console.log(err);
       }
